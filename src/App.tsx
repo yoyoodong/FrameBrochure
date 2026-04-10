@@ -191,7 +191,10 @@ export default function App() {
                       </ul>
                     )}
                     {item.subItems && (
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                      <div className={cn(
+                        "grid grid-cols-1 gap-6 mt-8",
+                        item.subItems.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+                      )}>
                         {item.subItems.map((si, j) => (
                           <div key={j} className={cn(
                             "p-6 rounded-sm transition-colors",
@@ -263,11 +266,21 @@ export default function App() {
             )}
 
             {section.subItems && !section.items && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
                 {section.subItems.map((si, i) => (
-                  <div key={i} className="space-y-6">
+                  <div key={i} className={cn(
+                    "space-y-6",
+                    section.id === "connectivity" && i === 2 ? "md:col-span-2" : ""
+                  )}>
                     <h3 className="text-lg md:text-2xl font-serif font-bold border-b border-mono-100 pb-4">{si.title}</h3>
-                    {si.content && <p className="text-sm md:text-base font-serif text-mono-600 italic leading-relaxed">「{si.content}」</p>}
+                    {si.content && (
+                      <p className={cn(
+                        "text-sm md:text-base font-serif text-mono-600 italic leading-relaxed",
+                        section.id === "connectivity" && i === 2 ? "max-w-4xl" : ""
+                      )}>
+                        「{si.content}」
+                      </p>
+                    )}
                     {si.points && (
                       <ul className="space-y-3">
                         {si.points.map((p, j) => (
