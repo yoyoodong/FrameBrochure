@@ -224,7 +224,7 @@ export default function App() {
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {group.points.map((p, j) => (
-                        <span key={j} className="px-3 py-1.5 bg-mono-200 text-[9px] md:text-[10px] font-sans tracking-wider text-mono-700 rounded-full">
+                        <span key={j} className="px-3 py-1.5 border border-mono-300 text-[9px] md:text-[10px] font-sans tracking-wider text-mono-600">
                           {p}
                         </span>
                       ))}
@@ -237,8 +237,7 @@ export default function App() {
             {section.points && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {section.points.map((p, i) => (
-                  <div key={i} className="flex items-center gap-6 p-6 bg-mono-white rounded-sm shadow-sm border border-mono-100">
-                    <span className="text-2xl md:text-3xl font-serif font-bold text-mono-200">{i + 1}</span>
+                  <div key={i} className="flex items-center gap-6 p-6 border border-mono-200 rounded-none">
                     <span className="text-sm md:text-base font-serif text-mono-800 leading-snug">{p}</span>
                   </div>
                 ))}
