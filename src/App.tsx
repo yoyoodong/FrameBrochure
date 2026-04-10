@@ -82,11 +82,11 @@ export default function App() {
             <span className="text-mono-400 font-sans text-sm md:text-base tracking-[0.5em] uppercase block">
               Product Manual
             </span>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold text-mono-white tracking-tighter">
+            <h1 className="text-3xl md:text-5xl font-serif font-bold text-mono-white tracking-[0.1em]">
               {CONTENT.brand.name}
             </h1>
             <h2 className="text-2xl md:text-4xl font-serif text-mono-300 tracking-[0.2em]">
-              产品手册
+              产品书
             </h2>
           </div>
           
