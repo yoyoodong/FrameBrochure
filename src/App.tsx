@@ -10,7 +10,7 @@ import { cn } from './lib/utils';
 import { useRef, type ReactNode } from 'react';
 
 const PageWrapper = ({ children, className, id }: { children: ReactNode; className?: string; id?: string; key?: string }) => (
-  <section id={id} className={cn("min-h-screen w-full flex flex-col relative overflow-hidden page-break py-12 md:py-20 px-6 md:px-24", className)}>
+  <section id={id} className={cn("w-full flex flex-col relative overflow-hidden page-break py-12 md:py-16 px-6 md:px-24", className)}>
     {children}
   </section>
 );
@@ -150,7 +150,7 @@ export default function App() {
 
             {section.content && (
               <p className={cn(
-                "text-lg md:text-2xl font-serif leading-relaxed mb-10 md:mb-12 max-w-4xl",
+                "text-base md:text-lg font-serif leading-relaxed mb-8 md:mb-10 max-w-4xl",
                 section.id === "friction" || section.id === "hardware" ? "text-mono-300" : "text-mono-800"
               )}>
                 {section.content}
@@ -168,7 +168,7 @@ export default function App() {
                     )}
                     {item.title && (
                       <div className="space-y-1">
-                        <h3 className="text-xl md:text-3xl font-serif font-bold">{item.title}</h3>
+                        <h3 className="text-lg md:text-2xl font-serif font-bold">{item.title}</h3>
                         {item.subtitle && <p className="text-mono-400 font-sans text-[10px] md:text-xs tracking-widest uppercase">{item.subtitle}</p>}
                       </div>
                     )}
@@ -267,8 +267,8 @@ export default function App() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {section.subItems.map((si, i) => (
                   <div key={i} className="space-y-6">
-                    <h3 className="text-xl md:text-3xl font-serif font-bold border-b border-mono-100 pb-4">{si.title}</h3>
-                    {si.content && <p className="text-base md:text-lg font-serif text-mono-600 italic leading-relaxed">「{si.content}」</p>}
+                    <h3 className="text-lg md:text-2xl font-serif font-bold border-b border-mono-100 pb-4">{si.title}</h3>
+                    {si.content && <p className="text-sm md:text-base font-serif text-mono-600 italic leading-relaxed">「{si.content}」</p>}
                     {si.points && (
                       <ul className="space-y-3">
                         {si.points.map((p, j) => (
@@ -304,10 +304,10 @@ export default function App() {
 
             {section.id === "closing" && (
               <div className="text-center py-12 md:py-16">
-                <p className="text-base md:text-xl font-serif leading-tight text-mono-700 mb-8 italic max-w-2xl mx-auto">
+                <p className="text-sm md:text-lg font-serif leading-tight text-mono-700 mb-8 italic max-w-2xl mx-auto">
                   「{section.content}」
                 </p>
-                <h2 className="text-3xl md:text-5xl font-serif font-bold italic text-mono-900">
+                <h2 className="text-2xl md:text-4xl font-serif font-bold italic text-mono-900">
                   {section.finalTagline}
                 </h2>
               </div>
@@ -322,7 +322,7 @@ export default function App() {
           <div className="mb-12">
             <span className="font-sans tracking-[1em] text-mono-300 uppercase text-[10px] md:text-xs">MagicFrame</span>
           </div>
-          <p className="text-lg md:text-xl font-serif text-mono-600 mb-12">
+          <p className="text-base md:text-lg font-serif text-mono-600 mb-12">
             {CONTENT.brand.vision}
           </p>
           <div className="h-px w-24 md:w-32 bg-mono-200 mx-auto mb-12" />
