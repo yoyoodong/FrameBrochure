@@ -148,7 +148,7 @@ export default function App() {
               light={section.id === "friction" || section.id === "hardware"}
             />
 
-            {section.content && (
+            {section.content && section.id !== "closing" && (
               <p className={cn(
                 "text-base md:text-lg font-serif leading-relaxed mb-8 md:mb-10 max-w-4xl",
                 section.id === "friction" || section.id === "hardware" ? "text-mono-300" : "text-mono-800"
